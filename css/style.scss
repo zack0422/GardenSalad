@@ -1,0 +1,341 @@
+/*=============================================================
+# font_family
+============================================================= */
+$font_ja: "Noto Sans JP", sans-serif;
+$font_en: reross-quadratic, sans-serif;
+
+/*=============================================================
+# font_color
+============================================================= */
+$font_color1: #333;
+$font_color2: #fff;
+
+$base_color: #2f2f2f;
+$main_color: #f2f2f2;
+$accent_color: #159741;
+
+/*=============================================================
+# inner_width
+============================================================= */
+$layout-width-inner: 1440px;
+
+/*=============================================================
+# level
+============================================================= */
+$header_level: 10;
+
+/*=============================================================
+# breakpoint
+============================================================= */
+$breakpoints: (
+  "sp": "(max-width: 767px)",
+  "tab": "(min-width: 768px) and (max-width: #{$layout-width-inner - 1px})",
+  "pc": "(min-width: #{$layout-width-inner})",
+);
+
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+/*=============================================================
+# common
+============================================================= */
+body {
+  font-family: $font_ja;
+}
+
+img {
+  max-width: 100%;
+}
+
+.sp {
+  @include mq('pc') {
+    display: none;
+  }
+}
+
+.pc {
+  @include mq('sp') {
+    display: none;
+  }
+}
+
+.inner {
+  width: $layout-width-inner;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.btn {
+  width: 300px;
+  height: 56px;
+  border: 1px solid $font_color1;
+  text-align: center;
+  line-height: 56px;
+  font-size: 16px;
+  position: relative;
+  color: $font_color1;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  display: block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 37px;
+    width: 17px;
+    height: 17px;
+    background: url(../img/Vector_black.svg);
+  }
+
+  &:hover {
+    color: $font_color2;
+    background: $font_color1;
+    &::after {
+      background: url(../img/Vector_white.svg);
+    }
+  }
+}
+
+.submit_btn {
+  width: 239px;
+  height: 56px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-align: center;
+  line-height: 56px;
+  background: $accent_color;
+  color: $font_color2;
+  display: block;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:disabled {
+    background: #bdbdbd;
+    border: none;
+  }
+}
+
+/*=============================================================
+# header
+============================================================= */
+.header {
+  background: $base_color;
+  height: 90px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: $header_level;
+
+  @include mq("sp") {
+    height: 60px;
+  }
+}
+
+.header_inner {
+  display: flex;
+  align-items: center;
+  height: inherit;
+}
+
+.header_logo {
+  width: 116px;
+  height: 63px;
+  margin-left: 33px;
+
+  @include mq("sp") {
+    width: 55px;
+    height: 30px;
+    margin-left: 16px;
+  }
+}
+
+.header_nav {
+  display: flex;
+  margin-left: auto;
+}
+
+.header_nav_item {
+  &:last-child {
+    margin-right: 71px;
+
+    @include mq("sp") {
+      margin-right: 16px;
+    }
+  }
+
+  @include mq("sp") {
+    margin-right: 20px;
+  }
+  margin-right: 40px;
+}
+
+.header_nav_link {
+  display: block;
+  color: $font_color2;
+  font-family: $font_en;
+  letter-spacing: 0.03em;
+  font-size: 18px;
+  height: 90px;
+  line-height: 90px;
+  @include mq("sp") {
+    font-size: 14px;
+    height: 60px;
+    line-height: 60px;
+  }
+}
+
+/*=============================================================
+# mv
+============================================================= */
+.mv {
+  background: $base_color;
+  height: 650px;
+  margin-top: 90px;
+
+  @include mq("sp") {
+    height: 243px;
+    margin-top: 60px;
+  }
+}
+
+.mv_inner {
+  position: relative;
+}
+
+.mv_catchcopy {
+  position: absolute;
+  left: 178px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @include mq("sp") {
+    left: 19px;
+  }
+}
+
+.mv_catchcopy_en {
+  font-size: 100px;
+  color: $font_color2;
+  font-family: $font_en;
+  line-height: 1;
+
+  @include mq("sp") {
+    font-size: 36px;
+  }
+}
+
+.mv_catchcopy_en_accent {
+  color: $accent_color;
+}
+
+.mv_catchcopy_ja {
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: 0.05em;
+  color: $font_color2;
+  line-height: (46 / 32);
+  margin-top: 37px;
+
+  @include mq("sp") {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 15px;
+  }
+}
+
+.mv_catchcopy_ja_accent {
+  width: 524px;
+  height: 64px;
+  background: $accent_color;
+  display: block;
+  line-height: 64px;
+  margin-top: 21px;
+
+  @include mq("sp") {
+    margin-top: 9px;
+    width: 225px;
+    height: 31px;
+    line-height: 31px;
+  }
+}
+
+.mv_img {
+  width: 1080px;
+  margin-left: auto;
+  height: 650px;
+  background: url(../img/img_mv.svg) no-repeat right center / contain;
+
+  @include mq("sp") {
+    height: 243px;
+    width: 308px;
+    background: url(../img/img_mv_sp.svg) no-repeat right center / contain;
+  }
+}
+
+/*=============================================================
+# concept
+============================================================= */
+.concept {
+  background: $base_color;
+}
+
+.concept_inner {
+  text-align: center;
+  background: transparent url(../img/GardenSalad.svg) no-repeat bottom center;
+  padding: 0 36px;
+
+  @include mq('sp') {
+    background: transparent url(../img/GardenSalad_sp.svg) no-repeat bottom center;
+  }
+}
+
+.concept_title {
+  font-weight: 700;
+  font-size: 30px;
+  color: $font_color2;
+  letter-spacing: 0.05em;
+  padding-top: 120px;
+  line-height: (45 / 30);
+
+  @include mq('sp') {
+    padding-top: 48px;
+    font-size: 20px;
+  }
+}
+
+.concept_text {
+  font-size: 18px;
+  color: $font_color2;
+  margin-top: 24px;
+  line-height: (27 / 18);
+  
+  &:first-child {
+    margin-top: 48px;
+    @include mq('sp') {
+      margin-top: 24px;
+    }
+  }
+
+  &:last-child {
+    padding-bottom: 110px;
+    @include mq('sp') {
+      padding-bottom: 64px;
+    }
+  }
+
+  @include mq('sp') {
+    font-size: 16px;
+  }
+}
+
+
+
