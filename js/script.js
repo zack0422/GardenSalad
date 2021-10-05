@@ -38,7 +38,7 @@ $(window).on("scroll", function () {
 // スムーススクロール
 jQuery('a[href^="#"]').click(function () {
   let header = jQuery(".header").innerHeight();
-  let speed = 300;
+  let speed = 500;
   let id = jQuery(this).attr("href");
   let position = 0;
   if ("#" != id) {

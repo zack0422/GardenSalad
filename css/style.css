@@ -17,7 +17,6 @@
 /*=============================================================
 # common
 ============================================================= */
-
 body {
   font-family: "Noto Sans JP", sans-serif;
   color: #333;
@@ -1112,30 +1111,17 @@ img {
   }
 }
 
+.menu_instagram_imgs_inner {
+  overflow: auto;
+  max-width: 100%;
+}
+
 .menu_instagram_imgs {
   margin: 34px auto 0;
   width: 972px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: auto;
-  max-width: 100%;
-}
-
-@media (min-width: 1440px) {
-  .menu_instagram_imgs {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1439px) {
-  .menu_instagram_imgs {
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
 }
 
 @media (max-width: 767px) {
@@ -1143,6 +1129,28 @@ img {
     margin: 24px 10px 0;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+  }
+}
+
+.menu_instagram_img {
+  width: calc(25% - 16px * 3 / 4);
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  .menu_instagram_img:not(:first-child) {
+    margin-left: 16px;
+  }
+  .menu_instagram_img img {
+    max-width: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  .menu_instagram_img:not(:first-child) {
+    margin-left: 16px;
+  }
+  .menu_instagram_img img {
+    max-width: none;
   }
 }
 
@@ -1935,7 +1943,7 @@ img {
 ============================================================= */
 .pagetop {
   position: fixed;
-  bottom: 272px;
+  bottom: 60px;
   right: 60px;
   width: 120px;
 }
@@ -1945,7 +1953,7 @@ img {
     width: 70px;
     height: 70px;
     right: 16px;
-    bottom: 305px;
+    bottom: 16px;
     z-index: 10;
   }
 }
