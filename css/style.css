@@ -1116,6 +1116,12 @@ img {
   max-width: 100%;
 }
 
+@media (max-width: 767px) {
+  .menu_instagram_imgs_inner {
+    overflow: unset;
+  }
+}
+
 .menu_instagram_imgs {
   margin: 34px auto 0;
   width: 972px;
@@ -1129,6 +1135,7 @@ img {
     margin: 24px 10px 0;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    max-width: 100%;
   }
 }
 

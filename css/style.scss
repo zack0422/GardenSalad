@@ -979,6 +979,10 @@ img {
 .menu_instagram_imgs_inner {
   overflow: auto;
   max-width: 100%;
+
+  @include mq('sp') {
+    overflow: unset;
+  }
 }
 
 .menu_instagram_imgs {
@@ -989,6 +993,7 @@ img {
   @include mq("sp") {
     margin: 24px 10px 0;
     flex-wrap: wrap;
+    max-width: 100%;
   }
 }
 
