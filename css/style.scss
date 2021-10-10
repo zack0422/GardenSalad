@@ -602,6 +602,7 @@ img {
 
   @include mq("sp") {
     height: 250px;
+    background-attachment: unset;
   }
 }
 
@@ -1060,6 +1061,7 @@ img {
 
   @include mq("sp") {
     height: 250px;
+    background-attachment: unset;
   }
 }
 

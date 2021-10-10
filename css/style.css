@@ -661,6 +661,7 @@ img {
 @media (max-width: 767px) {
   .parallax1 {
     height: 250px;
+    background-attachment: unset;
   }
 }
 
@@ -1206,6 +1207,7 @@ img {
 @media (max-width: 767px) {
   .parallax2 {
     height: 250px;
+    background-attachment: unset;
   }
 }
 
