@@ -1234,7 +1234,7 @@ img {
 @media (max-width: 767px) {
   .shop_map {
     margin-top: 56px;
-    background: url(../img/sp/shop_map_sp.svg) no-repeat center center/contain;
+    background: url(../img/sp/shop_map_sp.png) no-repeat center center/contain;
     height: 250px;
   }
 }
